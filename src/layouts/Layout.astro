@@ -7,7 +7,12 @@ export interface Props {
 }
 
 const { title } = Astro.props;
+
 ---
+
+<style>
+	
+</style>
 
 <script>
     import { tsParticles } from "tsparticles-engine";
@@ -16,7 +21,37 @@ const { title } = Astro.props;
     (async () => {
         await loadFull(tsParticles);
     })();
+
+	const darkModeToggle = document.getElementById('darkModeToggle');
+	const darkModeClass = 'dark';
+	const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+	// Verificar a preferência do usuário ao carregar a página
+	const storedDarkMode = localStorage.getItem('darkMode');
+	if (storedDarkMode === 'true' || (storedDarkMode !== 'false' && prefersDarkMode)) {
+	  enableDarkMode();
+	}
+
+	darkModeToggle.addEventListener('click', () => {
+  		const isDarkMode = document.documentElement.classList.contains(darkModeClass);
+
+  		if (isDarkMode) {
+    		disableDarkMode();
+  		} else {
+   			 enableDarkMode();
+  		}
+  	localStorage.setItem('darkMode', !isDarkMode);	
+});
+
+function enableDarkMode() {
+  document.documentElement.classList.add(darkModeClass);
+}
+
+function disableDarkMode() {
+  document.documentElement.classList.remove(darkModeClass);
+}
 </script>
+
 
 <!DOCTYPE html>
 <html lang="pt">
@@ -27,20 +62,28 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>		
+	<body>			
 		<div class="flex place-content-around align-middle h-10 mt-4">
-			<nav class="space-x-5">
-				<a href="#about">Sobre</a>
-				<a href="#experience">Experiencia</a>
-				<a href="#portfolio">Portfolio</a>
-				<a href="#contact">Contato</a>
-		  	</nav>
-
 			<div>
-				
-			</div>
+			<nav class="space-x-5 fixed bg-[#CBC9C9] w-1/2 text-center rounded-full">
+				<a class="hover:text-gray-300" href="#about">Sobre</a>
+				<a class="hover:text-gray-300" href="#experience">Experiencia</a>
+				<a class="hover:text-gray-300" href="#portfolio">Portfolio</a>
+				<a class="hover:text-gray-300" href="#contact">Contato</a>
+		  	</nav>
+			
+			  <button id="darkmode"/>
+			<button id="darkModeToggle" class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-800">
+			  <svg class="w-4 h-4 text-gray-600 dark:text-gray-400"	fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round"  stroke-width="2" d="M7 18a8.003 8.003 0 0010-12.09M7 18c-1.42 1.42-2.35 2.57-2.74 3.18a2 2 0 002.42-3.18zm0 0h10M7 18H5" />
+			  </svg>
+			</button>
 		</div>
-		
+		<div>
+				
+		</div>
+		<Particles id="tsparticles" options={options} />
+		</div>	
 		<slot />
 	</body>
 </html>
@@ -52,7 +95,8 @@ const { title } = Astro.props;
 	html {
 		font-family: system-ui, sans-serif;
 		background-color: #F6F6F6;
-		scroll-behavior: smooth;		
+		scroll-behavior: smooth;	
+		color:#F6F6F6;	
 	}
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
