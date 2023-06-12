@@ -11,6 +11,7 @@ const { title } = Astro.props;
 ---
 
 <script>
+	/*
     import { tsParticles } from "tsparticles-engine";
     import { loadFull } from "tsparticles";
 	import dark from '../particles/dark.json' assert {type: 'json'};
@@ -19,6 +20,7 @@ const { title } = Astro.props;
     (async () => {
         await loadFull(tsParticles);
     })();
+	*/
 
 	const darkModeToggle = document.getElementById('darkModeToggle');
 	const darkModeClass = 'dark';
@@ -43,12 +45,12 @@ const { title } = Astro.props;
 
 	function enableDarkMode() {
   		document.documentElement.classList.add(darkModeClass);
-  		tsParticles.load(tsParticles, dark);
+  		//tsParticles.load(tsParticles, dark);
 	}
 
 	function disableDarkMode() {
   		document.documentElement.classList.remove(darkModeClass);
-	  	tsParticles.load(tsParticles, light);
+	  	//tsParticles.load(tsParticles, light);
 	}
 </script>
 
@@ -56,6 +58,8 @@ const { title } = Astro.props;
 <!DOCTYPE html>
 <html lang="pt">
 	<head>
+		<link rel="preconnect" href="https://rsms.me/">
+		<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -90,18 +94,22 @@ const { title } = Astro.props;
 					</div>			
 		  		</nav>			
 			</header>
-		<div>
-				
-		</div>
+		<!-- 
 		<Particles id="tsparticles" options={light} />
+		-->
 		</div>	
-		<slot />
+		<div class="">
+			<slot />
+		</div>
 	</body>
 </html>
 <style is:global>
 	:root {
 		--accent: 124, 58, 237;
 		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+		font-family: 'Inter', sans-serif; }
+		@supports (font-variation-settings: normal) {
+  			:root { font-family: 'Inter var', sans-serif; }
 	}
 	html {
 		font-family: system-ui, sans-serif;
