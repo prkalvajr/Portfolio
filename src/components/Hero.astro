@@ -1,31 +1,72 @@
 ---
-import Icon from "/repo/Portfolio/src/components/Icon.astro";
-/* TODO -> Alterar ... para buscar na mesma pasta*/
+import '../css/hero.css'
+import '../js/hero.js'
+
 ---
 
+<script>
+
+var words = 
+[
+  'Crafting Solutions for Success', 'Bringing Ideas to Life',
+  'Transforming Ideas into Reality', 'Creating Digital Experiences'
+],
+part,
+i = 0,
+offset = 0,
+len = words.length,
+forwards = true,
+skip_count = 0,
+skip_delay = 15,
+speed = 70;
+var wordflick = function () {
+setInterval(function () {
+if (forwards) {
+  if (offset >= words[i].length) {
+    ++skip_count;
+    if (skip_count == skip_delay) {
+      forwards = false;
+      skip_count = 0;
+    }
+  }
+}
+else {
+  if (offset == 0) {
+    forwards = true;
+    i++;
+    offset = 0;
+    if (i >= len) {
+      i = 0;
+    }
+  }
+}
+part = words[i].substr(0, offset);
+if (skip_count == 0) {
+  if (forwards) {
+    offset++;
+  }
+  else {
+    offset--;
+  }
+}
+document.getElementById('slogan').textContent = part;
+},speed);
+};
+
+wordflick();
+    
+</script>
+
 <section id="hero" class="min-h-screen flex place-items-center flex-row bg-[#F6F8FA] dark:bg-gray-950 dark:text-white">
-        <div class="mx-12 w-2/4  border-2 border-[#30CADD] rounded-lg">
+        <div class="mx-12 w-2/4">
             <div class="py-5 px-2">
-                <h1 class="font-bold text-4xl text-center text-[#FC6623]" >Pedro Kalva Jr</h1>
-                <h3 class="pt-2 text-xl text-center text-[#ff9566]"> Vamos decolar o seu negócio </h3>
-            </div>
-         
-            <div class="py-8">   
-                <div>
-                    <h1 class="font-semibold mt-2 text-xl text-center text-[#FC6623]"> Skills </h1>
-                </div>    
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center mt-6">        
-                    <Icon path="Icons/html_css.png" title="Html&CSS"/>
-                    <Icon path="Icons/Csharp.png" title="C#"/>
-                    <Icon path="Icons/js.png" title="JS"/>
-                    <Icon path="Icons/react.png" title="React"/>
-                    <Icon path="Icons/wordpress.png" title="Wordpress"/>
-                    <Icon path="Icons/sql.png" title="SQL"/>
-                </div>
+                <h1 class="font-bold text-4xl text-center text-[#FFFFFF]"> Hello, I'm Pedro Kalva </h1>
+                <h1 class="text-4xl my-3 text-center text-[#FFFFFF]"> Full Stack Developer </h1>
+                <h2 id="slogan" class="text-center text-3xl"></h3>       
             </div>
         </div>
 
        <div class="w-2/4 flex place-items-center">
-            <img class="w-5/6" src="images/dev.png" alt="Success" />
+            <img class="w-5/6" src="images/green_Dev.png" alt="Success" />
         </div> 
 </section>
