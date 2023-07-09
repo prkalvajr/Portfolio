@@ -45,11 +45,19 @@ const { title } = Astro.props;
 
 	function enableDarkMode() {
   		document.documentElement.classList.add(darkModeClass);
+		var img = document.getElementById('darkModeToggle');
+		if (img instanceof HTMLImageElement) {
+			img.src = 'Icons/light-mode.png';
+      	}
   		//tsParticles.load(tsParticles, dark);
 	}
 
 	function disableDarkMode() {
   		document.documentElement.classList.remove(darkModeClass);
+		  var img = document.getElementById('darkModeToggle');
+		if (img instanceof HTMLImageElement) {
+			img.src = 'Icons/night-mode.png';
+      	}
 	  	//tsParticles.load(tsParticles, light);
 	}
 </script>
@@ -69,23 +77,23 @@ const { title } = Astro.props;
 	<body>			
 		<div>
 			<header>
-				<nav class="fixed bg-[#24292F] w-screen h-16 text-white dark:bg-gray-900">
+				<nav class="fixed bg-[#000000] w-screen h-16 text-white">
 					<div class="flex flex-row">
-						<div class="pl-5 py-3 w-1/12 ">
+						<div class="pl-5 py-5">
 							<a href="#hero">
-								<img src="logo/png/logo-no-background.png"/>
+								<h1 class="text-2xl font-bold"> Kalva </h1>
 							</a>
 						</div>
 					
 						<div class="basis-3/4 self-center flex justify-center space-x-10 text-base">
 							<a class="hover:text-[#20D19E] text-[#FFFFFF]" href="#hero">Home</a>
-							<a class="hover:text-[#20D19E] text-[#FFFFFF]" href="#experience">Experiencia</a>
-							<a class="hover:text-[#20D19E] text-[#FFFFFF]" href="#portfolio">Portfolio</a>
-							<a class="hover:text-[#20D19E] text-[#FFFFFF]" href="#contact">Contato</a>
+							<a class="hover:text-[#20D19E] text-[#FFFFFF]" href="#about">About me</a>
+							<a class="hover:text-[#20D19E] text-[#FFFFFF]" href="#projects">Projects</a>
+							<a class="hover:text-[#20D19E] text-[#FFFFFF]" href="#contact">Contact</a>
 						</div>
 
 						<div class="basis-1/4 self-center flex flex-row space-x-5" >
-							<button id="darkModeToggle" class="flex justify-center w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-800"/>
+							<img id="darkModeToggle" src="Icons/night-mode.png"  class="w-10 cursor-pointer" />
 							<select name="Language" class="text-gray-950">
 								<option selected value="pt-br">PT</option>
 								<option selected value="pt-br">EN</option>
