@@ -63,22 +63,33 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>			
-		<div class="flex place-content-around align-middle h-10 mt-4">
-			<div>
-			<nav class="space-x-5 fixed bg-[#24292F] w-1/2 text-center rounded-md p-1 text-white dark:bg-gray-900">
-				<a class="hover:text-gray-300" href="#about">Sobre</a>
-				<a class="hover:text-gray-300" href="#experience">Experiencia</a>
-				<a class="hover:text-gray-300" href="#portfolio">Portfolio</a>
-				<a class="hover:text-gray-300" href="#contact">Contato</a>
+		<div>
+			<header>
+				<nav class="fixed bg-[#24292F] w-screen h-16 text-white dark:bg-gray-900">
+					<div class="flex flex-row">
+						<div class="pl-5 py-3 w-1/12 ">
+							<a href="#about">
+								<img src="logo/png/logo-no-background.png"/>
+							</a>
+						</div>
+					
+						<div class="basis-3/4 self-center flex justify-center space-x-10 text-base">
+							<a class="hover:text-gray-300" href="#about">Sobre</a>
+							<a class="hover:text-gray-300" href="#experience">Experiencia</a>
+							<a class="hover:text-gray-300" href="#portfolio">Portfolio</a>
+							<a class="hover:text-gray-300" href="#contact">Contato</a>
+						</div>
 
-				<button id="darkModeToggle" class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-800">
-					<svg class="w-4 h-4 text-gray-600 dark:text-gray-400"	fill="none" viewBox="0 0 24 24" stroke="currentColor">
-					  <path stroke-linecap="round" stroke-linejoin="round"  stroke-width="2" d="M7 18a8.003 8.003 0 0010-12.09M7 18c-1.42 1.42-2.35 2.57-2.74 3.18a2 2 0 002.42-3.18zm0 0h10M7 18H5" />
-					</svg>
-				  </button>
-		  	</nav>
-			
-		</div>
+						<div class="basis-1/4 self-center flex flex-row space-x-5" >
+							<button id="darkModeToggle" class="flex justify-center w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-800"/>
+							<select name="Language" class="text-gray-950">
+								<option selected value="pt-br">PT</option>
+								<option selected value="pt-br">EN</option>
+							</select>
+						</div>
+					</div>			
+		  		</nav>			
+			</header>
 		<div>
 				
 		</div>
