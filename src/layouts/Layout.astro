@@ -38,7 +38,7 @@ const { title } = Astro.props;
   		} else {
    			enableDarkMode();
   		}
-  		localStorage.setItem('darkMode', !isDarkMode);	
+  		localStorage.setItem('darkMode', (!isDarkMode).toString());	
 	});
 
 	function enableDarkMode() {
