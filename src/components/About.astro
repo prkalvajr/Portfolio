@@ -1,7 +1,17 @@
 ---
 import Skills from '../components/Skills.astro'
 ---
-<section id="about" class="px-36 min-h-screen bg-[#F6F8FA] flex flex-col justify-evenly
+<script type="text/javascript">
+    function downloadResume() 
+    {
+        const downloadLink = document.createElement('a');
+        downloadLink.href = 'Files/Pedro_KalvaJunior_Resume.pdf';
+        downloadLink.download = 'KalvaResume.pdf';
+        downloadLink.click();
+    }
+</script> 
+
+<section id="about" class="px-36 min-h-screen bg-[#DEE4E7] flex flex-col justify-evenly
                         dark:bg-[#15294B] dark:text-white">
     
     <div class="h-1/5">
@@ -18,7 +28,9 @@ import Skills from '../components/Skills.astro'
     </div>
 
     <div class="h-1/5">
-        <button class="hover:border-dotted">Download resume</button>
+        <button onclick="downloadResume()" class="bg-[#23806A] hover:bg-[#20D19E] text-white font-bold py-2 px-4 rounded-full inline-flex items-center space-x-1">
+            <span>Download resume</span> <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+        </button>
     </div>
 
 </section>
