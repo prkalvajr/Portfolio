@@ -2,7 +2,7 @@
   "autoPlay": true,
   "background": {
     "color": {
-      "value": "#0d47a1"
+      "value": "#FFFFFF"
     },
     "image": "",
     "position": "50% 50%",
@@ -24,7 +24,7 @@
   "delay": 0,
   "fullScreen": {
     "enable": true,
-    "zIndex": 1
+    "zIndex": -10
   },
   "detectRetina": true,
   "duration": 0,
@@ -197,7 +197,7 @@
       }
     },
     "color": {
-      "value": "#fff",
+      "value": "#000",
       "animation": {
         "h": {
           "count": 0,
@@ -247,7 +247,7 @@
       },
       "decay": 0,
       "distance": {},
-      "direction": "bottom",
+      "direction": "top",
       "drift": 0,
       "enable": true,
       "gravity": {
@@ -334,7 +334,7 @@
     },
     "shape": {
       "options": {},
-      "type": "circle"
+      "type": "square"
     },
     "size": {
       "random": {

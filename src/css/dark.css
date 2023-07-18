@@ -1,0 +1,18 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Adicione as classes de modo escuro aqui */
+@media (prefers-color-scheme: dark) {
+  /* Exemplo de estilo de fundo escuro para a página */
+  body {
+    background-color: #1a202c;
+    color: #f7fafc;
+  }
+
+  /* Exemplo de estilo de botão escuro */
+  .btn-dark {
+    background-color: #4a5568;
+    color: #f7fafc;
+  }
+}
