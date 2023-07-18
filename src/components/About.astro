@@ -3,35 +3,31 @@ import Icon from "/repo/Portfolio/src/components/Icon.astro";
 /* TODO -> Alterar ... para buscar na mesma pasta*/
 ---
 
-<section id="about" class="flex flex-col min-h-screen pt-24 bg-[#F6F8FA]">
+<section id="about" class="min-h-screen pt-24 bg-[#F6F8FA] dark:bg-gray-950 dark:text-white">
     <div class="flex flex-row">
-        <div class="ml-12 mr-12">
-            <div class="rounded-lg p-2 bg-[#F6F8FA] py-5 px-2
-                    dark:bg-gray-900 dark:text-white ">
-                <h1 class="">Olá, sou Pedro Kalva Jr</h1>
-                <h3>Vou criar um website para seu negócio.</h3>
-
-                <label>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting
-                  industry. Lorem Ipsum has been the industry's standard dummy text
-                  ever since the 1500s, when an unknown printer took a galley of type
-                  and scrambled it to make a type specimen book.
-                </label>           
+        <div class="ml-12 mr-12 w-2/4  border-2 border-[#30CADD] rounded-lg">
+            <div class="py-5 px-2">
+                <h1 class="font-bold text-4xl text-center text-[#FC6623]" >Pedro Kalva Jr</h1>
+                <h3 class="pt-2 text-xl text-center text-[#ff9566]"> Vamos decolar o seu negócio </h3>
             </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center mt-10">
-                <Icon path="Icons/html_css.png" title="Html&CSS"/>
-                <Icon path="Icons/Csharp.png" title="C#"/>
-                <Icon path="Icons/js.png" title="JS"/>
-                <Icon path="Icons/react.png" title="React"/>
-                <Icon path="Icons/wordpress.png" title="Wordpress"/>
-                <Icon path="Icons/php.png" title="PHP"/>
-                <Icon path="Icons/sql.png" title="SQL"/>
+         
+            <div class="py-8">   
+                <div>
+                    <h1 class="font-semibold pl-64 mt-2 text-xl w-2/4 text-[#FC6623]"> Skills </h1>
+                </div>    
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-items-center mt-6">        
+                    <Icon path="Icons/html_css.png" title="Html&CSS"/>
+                    <Icon path="Icons/Csharp.png" title="C#"/>
+                    <Icon path="Icons/js.png" title="JS"/>
+                    <Icon path="Icons/react.png" title="React"/>
+                    <Icon path="Icons/wordpress.png" title="Wordpress"/>
+                    <Icon path="Icons/sql.png" title="SQL"/>
+                </div>
             </div>
         </div>
 
-       <div class="mr-12">
-            <img src="images/rocket.png" alt="Website building" />
+       <div class="w-2/4 pr-12 pt-12">
+            <img src="images/dev.png" alt="Success" />
         </div>
     </div>   
 </section>
