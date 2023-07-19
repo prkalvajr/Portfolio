@@ -2,15 +2,15 @@
 const {imgPath, title, text, codeLink, liveLink} = Astro.props;
 ---
 
-<div class="max-w-sm rounded overflow-hidden shadow-lg w-1/2 my-8">
-    <img src={imgPath} alt="Sunset in the mountains">
-    <div class="px-6 py-4">
-      <div class="font-bold text-xl mb-2">{title}</div>
-      <p class="text-gray-700 text-base">
+<div class="max-w-sm rounded overflow-hidden shadow-lg w-3/4 mt-2 mb-4">
+    <img src={imgPath} alt="Project image">
+    <div class="px-2 py-2">
+      <div class="font-bold text-xl mb-2 text-center">{title}</div>
+      <p class="text-gray-700 text-base text-center">
         {text}
       </p>
     </div>
-    <div class="px-6 pt-4 pb-2 flex justify-evenly">
+    <div class="px-2 pt-2 pb-2 flex justify-evenly">
       <a href={liveLink} class="inline-block bg-[#23806A] hover:bg-[#20D19E] rounded-full w-2/4 text-center py-1 text-sm font-semibold text-white mr-2 mb-2">Live</a>
       <a href={codeLink} class="inline-block bg-[#23806A] hover:bg-[#20D19E] rounded-full w-2/4 text-center py-1 text-sm font-semibold text-white mr-2 mb-2">Code</a>
     </div>

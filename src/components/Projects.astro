@@ -2,12 +2,12 @@
 import Card from '../components/Card.astro'
 ---
 
-<section id="projects" class="min-h-screen bg-[#dddddd] dark:bg-[#091E42] dark:text-white px-8 flex flex-col">
+<section id="projects" class="min-h-screen bg-[#dddddd] dark:bg-[#091E42] dark:text-white px-8">
     <h1 class="text-4xl text-center pt-8"> Projects </h1>
-    <div class="grid grid-cols-2 gap-4 justify-items-center">
-        <Card imgPath="/images/web-design.jpg" title="Pizza delivery" text="#wordpress #php #javascript" codeLink="https://github.com/", liveLink="https://www.google.com/"/>
-        <Card imgPath="/images/web-design.jpg" title="Marketplace" text="#API #CSharp #React" codeLink="https://github.com/", liveLink="https://www.google.com/"/>
-        <Card imgPath="/images/web-design.jpg" title="Project #3" text="#javascript #React " codeLink="https://github.com/", liveLink="https://www.google.com/"/>
-        <Card imgPath="/images/web-design.jpg" title="Project #4" text="#next.js #javascript" codeLink="https://github.com/", liveLink="https://www.google.com/"/>
+    <div class="grid grid-cols-2 justify-items-center py-6">
+        <Card imgPath="/images/web-design.jpg" class="-mr-8" title="Pizza delivery" text="#wordpress #php #javascript" codeLink="https://github.com/", liveLink="https://www.google.com/"/>
+        <Card imgPath="/images/web-design.jpg" class="-ml-8" title="Marketplace" text="#API #CSharp #React" codeLink="https://github.com/", liveLink="https://www.google.com/"/>
+        <Card imgPath="/images/web-design.jpg" class="-mr-8" title="Project #3" text="#javascript #React " codeLink="https://github.com/", liveLink="https://www.google.com/"/>
+        <Card imgPath="/images/web-design.jpg" class="-ml-8" title="Project #4" text="#next.js #javascript" codeLink="https://github.com/", liveLink="https://www.google.com/"/>
     </div>
 </section>
