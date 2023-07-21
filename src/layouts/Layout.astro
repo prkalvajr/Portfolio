@@ -93,7 +93,7 @@ const { title } = Astro.props;
 						</div>
 
 						<div class="basis-1/4 self-center flex flex-row space-x-5" >
-							<img id="darkModeToggle" src="Icons/night-mode.png"  class="w-10 cursor-pointer" />
+							<img id="darkModeToggle" src="Icons/night-mode.png"  class="w-10 cursor-pointer transition duration-1000" />
 							<select name="Language" class="text-gray-950">
 								<option selected value="pt-br">PT</option>
 								<option selected value="pt-br">EN</option>
@@ -109,7 +109,7 @@ const { title } = Astro.props;
 		<Particles id="tsparticles" options={light} />
 		-->
 		</div>	
-		<div class="">
+		<div>
 			<slot />
 		</div>
 	</body>
