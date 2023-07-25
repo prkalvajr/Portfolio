@@ -31,10 +31,20 @@ import Skills from '../components/Skills.astro'
         </p>
     </div>
 
-    <div class="pb-8">
-        <button onclick="downloadResume()" class="bg-[#23806A] hover:bg-[#20D19E] text-white font-bold py-2 px-4 rounded-full inline-flex items-center space-x-2">
+    <div class="pb-8 flex flex-row justify-around">
+        <button onclick="downloadResume()" class="bg-[#23806A] hover:bg-[#20D19E] text-white font-bold px-4 rounded-full inline-flex items-center space-x-2">
             <span>Download resume</span> <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
         </button>
+
+        <div class="flex space-x-5">
+            <label> Find me here on social media </label>
+            <a href="https://github.com/prkalvajr">
+                <img src="Icons/github.png" class="w-16"/>
+            </a>
+            <a class="mt-1.5" href="https://www.linkedin.com/in/pedro-kalva-junior-b28498b5/">
+                <img src="Icons/linkedin.png" class="w-16" />
+            </a>
+        </div>
     </div>
 
 </section>
