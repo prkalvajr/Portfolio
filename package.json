@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "preview:dist": "node scripts/static-server.mjs --root dist/portfolio/browser --port 4300",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
