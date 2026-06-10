@@ -31,7 +31,10 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build:pages
+        run: npm run build -- --base-href=/portfolio/
+
+      - name: Add SPA fallback
+        run: node scripts/create-gh-pages-404.mjs
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
@@ -48,4 +51,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-

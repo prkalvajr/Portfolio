@@ -30,12 +30,12 @@ npm run build
 For GitHub Pages project hosting at `/portfolio/`:
 
 ```bash
-npm run build:pages
+npm run build -- --base-href=/portfolio/
+node scripts/create-gh-pages-404.mjs
 ```
 
-The `build:pages` script also copies `index.html` to `404.html` so Angular routes can survive page refreshes on GitHub Pages.
+The helper script copies `index.html` to `404.html` so Angular routes can survive page refreshes on GitHub Pages.
 
 ## Deploy
 
 The workflow in `.github/workflows/pages.yml` builds the app and deploys it to GitHub Pages from the `main` branch.
-
