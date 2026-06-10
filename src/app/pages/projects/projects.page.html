@@ -1,0 +1,95 @@
+<section class="page-hero compact">
+  <p class="eyebrow">Projects</p>
+  <h1>Case-study style projects with live proof where possible</h1>
+  <p>
+    The strongest portfolio projects explain the problem, the decisions, the tradeoffs, and how to inspect the
+    result. This page is structured around that evidence.
+  </p>
+</section>
+
+<section class="section project-list">
+  @for (project of projects; track project.slug) {
+    <article class="project-detail">
+      <div class="project-content">
+        <div class="project-kicker">
+          <span>{{ project.status }}</span>
+          <strong>{{ project.type }}</strong>
+        </div>
+        <h2>{{ project.title }}</h2>
+        <p class="summary">{{ project.summary }}</p>
+        <p>{{ project.description }}</p>
+
+        <ul>
+          @for (highlight of project.highlights; track highlight) {
+            <li>{{ highlight }}</li>
+          }
+        </ul>
+
+        <div class="tag-row">
+          @for (tech of project.stack; track tech) {
+            <span>{{ tech }}</span>
+          }
+        </div>
+
+        <div class="link-row">
+          @for (link of project.links; track link.href) {
+            <a
+              [class.button-primary]="link.kind === 'primary'"
+              [class.button-secondary]="link.kind === 'secondary'"
+              class="button"
+              [href]="link.href"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {{ link.label }}
+            </a>
+          }
+        </div>
+      </div>
+
+      <div class="project-visual">
+        @if (project.slug === 'nutrio') {
+          <div class="nutrio-visual">
+            <img class="logo" src="/nutrio-logo.png" alt="Nutrio logo" />
+            <img src="/nutrio-desktop.png" alt="Nutrio desktop navigation preview" />
+            <img src="/nutrio-mobile.png" alt="Nutrio mobile navigation preview" />
+          </div>
+        }
+
+        @if (project.slug === 'event-sourcing') {
+          <div class="live-frame">
+            <iframe
+              title="Event Sourcing Bank live demo"
+              src="https://prkalvajr.github.io/event-sourcing/"
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin allow-forms"
+            ></iframe>
+          </div>
+        }
+      </div>
+    </article>
+  }
+</section>
+
+<section class="section idea-section">
+  <div class="section-heading">
+    <p class="eyebrow">Next valuable builds</p>
+    <h2>Project ideas that help with freelance work and senior contracts</h2>
+  </div>
+
+  <div class="idea-grid">
+    @for (idea of ideas; track idea.title) {
+      <article>
+        <h3>{{ idea.title }}</h3>
+        <p>{{ idea.why }}</p>
+        <strong>{{ idea.proof }}</strong>
+        <div class="tag-row">
+          @for (tech of idea.stack; track tech) {
+            <span>{{ tech }}</span>
+          }
+        </div>
+      </article>
+    }
+  </div>
+</section>
+

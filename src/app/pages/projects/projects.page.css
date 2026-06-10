@@ -1,0 +1,168 @@
+.project-list {
+  display: grid;
+  gap: 22px;
+}
+
+.project-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
+  gap: clamp(22px, 4vw, 44px);
+  align-items: stretch;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 8px;
+  padding: clamp(22px, 4vw, 34px);
+  background: #ffffff;
+}
+
+.project-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.project-kicker span {
+  color: var(--teal-dark);
+  font-weight: 850;
+}
+
+.project-content h2 {
+  margin: 12px 0;
+  font-size: clamp(2rem, 5vw, 3.3rem);
+}
+
+.project-content p {
+  color: var(--muted);
+  line-height: 1.68;
+}
+
+.project-content .summary {
+  color: var(--ink);
+  font-size: 1.12rem;
+  font-weight: 650;
+}
+
+.project-content ul {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+  padding-left: 18px;
+}
+
+.tag-row,
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-row span {
+  border: 1px solid rgba(30, 58, 138, 0.12);
+  border-radius: 8px;
+  padding: 7px 10px;
+  color: var(--navy);
+  background: var(--navy-soft);
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.link-row {
+  margin-top: 24px;
+}
+
+.project-visual {
+  min-width: 0;
+}
+
+.nutrio-visual {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  gap: 12px;
+  height: 100%;
+}
+
+.nutrio-visual img {
+  width: 100%;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 8px;
+  object-fit: cover;
+  background: var(--paper);
+}
+
+.nutrio-visual .logo {
+  grid-row: span 2;
+  object-fit: contain;
+  padding: 28px;
+}
+
+.live-frame {
+  height: 100%;
+  min-height: 430px;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 8px;
+  background: var(--ink);
+}
+
+.live-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.idea-section {
+  background: var(--paper);
+}
+
+.idea-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.idea-grid article {
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 8px;
+  padding: 22px;
+  background: #ffffff;
+}
+
+.idea-grid h3 {
+  margin: 0 0 10px;
+}
+
+.idea-grid p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.idea-grid strong {
+  display: block;
+  margin: 14px 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 920px) {
+  .project-detail,
+  .idea-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .live-frame {
+    aspect-ratio: 16 / 11;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .nutrio-visual {
+    grid-template-columns: 1fr;
+  }
+
+  .nutrio-visual .logo {
+    grid-row: auto;
+  }
+}
+

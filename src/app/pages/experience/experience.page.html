@@ -1,0 +1,27 @@
+<section class="page-hero compact">
+  <p class="eyebrow">Work experience</p>
+  <h1>A senior timeline shell, ready for your updated resume</h1>
+  <p>
+    The current entries avoid inventing company history. Send the updated resume and this becomes a precise,
+    evidence-rich timeline with dates, companies, scope, and outcomes.
+  </p>
+</section>
+
+<section class="section timeline">
+  @for (item of items; track item.title) {
+    <article class="timeline-item">
+      <div class="timeline-period">{{ item.period }}</div>
+      <div class="timeline-body">
+        <p class="eyebrow">{{ item.context }}</p>
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.summary }}</p>
+        <ul>
+          @for (highlight of item.highlights; track highlight) {
+            <li>{{ highlight }}</li>
+          }
+        </ul>
+      </div>
+    </article>
+  }
+</section>
+
