@@ -3,8 +3,7 @@
   grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
   gap: clamp(24px, 5vw, 72px);
   align-items: center;
-  min-height: calc(100vh - 78px);
-  padding: clamp(56px, 8vw, 104px) var(--page-x) 48px;
+  padding: clamp(48px, 6vw, 82px) var(--page-x) clamp(36px, 5vw, 64px);
   background:
     linear-gradient(135deg, rgba(30, 58, 138, 0.08), transparent 44%),
     linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
@@ -215,6 +214,25 @@
 
   .hero {
     min-height: auto;
+    padding-top: 56px;
   }
 }
 
+@media (max-width: 520px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .focus-panel-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

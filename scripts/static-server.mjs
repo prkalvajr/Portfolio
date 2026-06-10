@@ -60,6 +60,7 @@ const server = createServer((request, response) => {
 });
 
 server.listen(port, host, () => {
-  console.log(`Serving ${root} at http://${host}:${port}`);
+  if (!process.env.QUIET_PREVIEW) {
+    console.log(`Serving ${root} at http://${host}:${port}`);
+  }
 });
-

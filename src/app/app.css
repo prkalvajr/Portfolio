@@ -113,17 +113,30 @@ main {
   .nav {
     width: 100%;
     justify-content: flex-start;
-    overflow-x: auto;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     padding-bottom: 2px;
   }
 
   .nav a {
-    white-space: nowrap;
+    white-space: normal;
   }
 
   .site-footer {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .nav a {
+    justify-content: center;
+    padding: 0 6px;
+    font-size: 0.84rem;
   }
 }
