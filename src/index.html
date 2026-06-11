@@ -12,10 +12,16 @@
       const theme = savedTheme === 'dark' || savedTheme === 'light'
         ? savedTheme
         : prefersDark ? 'dark' : 'light';
+      const savedLanguage = localStorage.getItem('portfolio-language');
+      const language = savedLanguage === 'pt-BR' || savedLanguage === 'en'
+        ? savedLanguage
+        : navigator.language.toLowerCase().startsWith('pt') ? 'pt-BR' : 'en';
       document.documentElement.dataset.theme = theme;
       document.documentElement.style.colorScheme = theme;
+      document.documentElement.lang = language;
     } catch {
       document.documentElement.dataset.theme = 'light';
+      document.documentElement.lang = 'en';
     }
   </script>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
