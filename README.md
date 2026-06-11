@@ -27,10 +27,10 @@ Open `http://localhost:4200/`.
 npm run build
 ```
 
-For GitHub Pages project hosting at `/portfolio/`:
+For GitHub Pages project hosting at `/Portfolio/`:
 
 ```bash
-npm run build -- --base-href=/portfolio/
+npm run build -- --base-href=/Portfolio/
 node scripts/create-gh-pages-404.mjs
 ```
 
