@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { profile } from './data/portfolio-content';
+import { ThemeService } from './theme.service';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ import { profile } from './data/portfolio-content';
   styleUrl: './app.css'
 })
 export class App {
+  protected readonly themeService = inject(ThemeService);
   protected readonly profile = profile;
   protected readonly navItems = [
     { label: 'Home', path: '/' },

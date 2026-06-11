@@ -8,17 +8,37 @@
       </span>
     </a>
 
-    <nav class="nav" aria-label="Primary navigation">
-      @for (item of navItems; track item.path) {
-        <a
-          [routerLink]="item.path"
-          routerLinkActive="is-active"
-          [routerLinkActiveOptions]="{ exact: item.path === '/' }"
-        >
-          {{ item.label }}
-        </a>
-      }
-    </nav>
+    <div class="nav-group">
+      <nav class="nav" aria-label="Primary navigation">
+        @for (item of navItems; track item.path) {
+          <a
+            [routerLink]="item.path"
+            routerLinkActive="is-active"
+            [routerLinkActiveOptions]="{ exact: item.path === '/' }"
+          >
+            {{ item.label }}
+          </a>
+        }
+      </nav>
+
+      <button
+        class="theme-toggle"
+        type="button"
+        (click)="themeService.toggle()"
+        [attr.aria-label]="themeService.isDark() ? 'Switch to light mode' : 'Switch to dark mode'"
+        [title]="themeService.isDark() ? 'Switch to light mode' : 'Switch to dark mode'"
+      >
+        @if (themeService.isDark()) {
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M12 4V2m0 20v-2m8-8h2M2 12h2m14.95-6.95 1.42-1.42M3.63 20.37l1.42-1.42m0-13.9L3.63 3.63m16.74 16.74-1.42-1.42M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z" />
+          </svg>
+        } @else {
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a7 7 0 1 0 11 11Z" />
+          </svg>
+        }
+      </button>
+    </div>
   </header>
 
   <main>

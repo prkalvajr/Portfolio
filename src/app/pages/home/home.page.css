@@ -4,9 +4,7 @@
   gap: clamp(24px, 5vw, 72px);
   align-items: center;
   padding: clamp(48px, 6vw, 82px) var(--page-x) clamp(36px, 5vw, 64px);
-  background:
-    linear-gradient(135deg, rgba(30, 58, 138, 0.08), transparent 44%),
-    linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+  background: var(--hero-bg);
 }
 
 .hero h1 {
@@ -40,10 +38,10 @@
 }
 
 .focus-panel {
-  border: 1px solid rgba(15, 23, 42, 0.1);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: clamp(22px, 4vw, 34px);
-  background: #ffffff;
+  background: var(--surface);
   box-shadow: var(--shadow-soft);
 }
 
@@ -84,11 +82,11 @@
 
 .focus-stack span,
 .tag-row span {
-  border: 1px solid rgba(30, 58, 138, 0.12);
+  border: 1px solid var(--chip-border);
   border-radius: 8px;
   padding: 7px 10px;
-  color: var(--navy);
-  background: var(--navy-soft);
+  color: var(--chip-text);
+  background: var(--chip-bg);
   font-weight: 700;
   font-size: 0.82rem;
 }
@@ -97,13 +95,13 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
-  border-block: 1px solid rgba(15, 23, 42, 0.08);
-  background: rgba(15, 23, 42, 0.08);
+  border-block: 1px solid var(--border-soft);
+  background: var(--border-soft);
 }
 
 .metric-band div {
   padding: 24px var(--page-x);
-  background: #ffffff;
+  background: var(--surface);
 }
 
 .metric-band strong,
@@ -130,10 +128,10 @@
 
 .project-card,
 .post-card {
-  border: 1px solid rgba(15, 23, 42, 0.1);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 24px;
-  background: #ffffff;
+  background: var(--surface);
 }
 
 .project-card-top {

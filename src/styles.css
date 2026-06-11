@@ -5,6 +5,8 @@
 }
 
 :root {
+  color-scheme: light;
+
   --navy: #1e3a8a;
   --navy-dark: #0f245c;
   --navy-soft: #eaf2ff;
@@ -17,11 +19,79 @@
   --muted: #5f6b7a;
   --line: #dce3ec;
   --paper: #f6f8fb;
+  --bg: #ffffff;
+  --bg-soft: #f7fbff;
+  --surface: #ffffff;
+  --surface-alt: #f6f8fb;
+  --surface-raised: #ffffff;
+  --border: rgba(15, 23, 42, 0.1);
+  --border-soft: rgba(15, 23, 42, 0.08);
+  --border-accent: rgba(30, 58, 138, 0.12);
+  --header-bg: rgba(250, 252, 255, 0.9);
+  --hero-bg:
+    linear-gradient(135deg, rgba(30, 58, 138, 0.08), transparent 44%),
+    linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+  --page-hero-bg:
+    linear-gradient(135deg, rgba(15, 159, 154, 0.12), transparent 42%),
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  --chip-bg: var(--navy-soft);
+  --chip-border: rgba(30, 58, 138, 0.12);
+  --chip-text: var(--navy);
+  --frame-bg: #111827;
+  --button-primary-bg: var(--navy);
+  --button-primary-bg-hover: var(--navy-dark);
+  --button-primary-text: #ffffff;
+  --button-secondary-bg: #ffffff;
+  --button-secondary-bg-hover: var(--navy-soft);
+  --button-secondary-text: var(--navy);
   --page-x: clamp(18px, 5vw, 72px);
   --shadow-soft: 0 18px 60px rgba(15, 23, 42, 0.12);
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
+}
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+
+  --navy: #93c5fd;
+  --navy-dark: #bfdbfe;
+  --navy-soft: rgba(96, 165, 250, 0.14);
+  --gold: #fbbf24;
+  --gold-dark: #fcd34d;
+  --teal: #2dd4bf;
+  --teal-dark: #5eead4;
+  --coral: #fca5a5;
+  --ink: #f8fafc;
+  --muted: #aab6c6;
+  --line: #263548;
+  --paper: #0b1626;
+  --bg: #07111f;
+  --bg-soft: #0c1728;
+  --surface: #0e1a2c;
+  --surface-alt: #111f33;
+  --surface-raised: #122238;
+  --border: rgba(148, 163, 184, 0.22);
+  --border-soft: rgba(148, 163, 184, 0.16);
+  --border-accent: rgba(147, 197, 253, 0.28);
+  --header-bg: rgba(7, 17, 31, 0.9);
+  --hero-bg:
+    linear-gradient(135deg, rgba(45, 212, 191, 0.12), transparent 42%),
+    linear-gradient(180deg, #07111f 0%, #0c1728 100%);
+  --page-hero-bg:
+    linear-gradient(135deg, rgba(147, 197, 253, 0.12), transparent 42%),
+    linear-gradient(180deg, #07111f 0%, #0c1728 100%);
+  --chip-bg: rgba(96, 165, 250, 0.14);
+  --chip-border: rgba(147, 197, 253, 0.28);
+  --chip-text: #bfdbfe;
+  --frame-bg: #020617;
+  --button-primary-bg: #3b82f6;
+  --button-primary-bg-hover: #60a5fa;
+  --button-primary-text: #ffffff;
+  --button-secondary-bg: rgba(148, 163, 184, 0.08);
+  --button-secondary-bg-hover: rgba(96, 165, 250, 0.14);
+  --button-secondary-text: #bfdbfe;
+  --shadow-soft: 0 22px 70px rgba(0, 0, 0, 0.36);
 }
 
 html {
@@ -30,12 +100,13 @@ html {
 
 body {
   margin: 0;
-  background: #ffffff;
+  background: var(--bg);
   color: var(--ink);
   font-family: inherit;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 img,
@@ -101,9 +172,7 @@ a {
 
 .page-hero {
   padding: clamp(58px, 9vw, 104px) var(--page-x) clamp(32px, 6vw, 64px);
-  background:
-    linear-gradient(135deg, rgba(15, 159, 154, 0.12), transparent 42%),
-    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  background: var(--page-hero-bg);
 }
 
 .page-hero.compact {
@@ -151,22 +220,22 @@ a {
 }
 
 .button-primary {
-  color: #ffffff;
-  background: var(--navy);
+  color: var(--button-primary-text);
+  background: var(--button-primary-bg);
 }
 
 .button-primary:hover {
-  background: var(--navy-dark);
+  background: var(--button-primary-bg-hover);
 }
 
 .button-secondary {
-  color: var(--navy);
-  border-color: rgba(30, 58, 138, 0.16);
-  background: #ffffff;
+  color: var(--button-secondary-text);
+  border-color: var(--border-accent);
+  background: var(--button-secondary-bg);
 }
 
 .button-secondary:hover {
-  background: var(--navy-soft);
+  background: var(--button-secondary-bg-hover);
 }
 
 @media (max-width: 720px) {

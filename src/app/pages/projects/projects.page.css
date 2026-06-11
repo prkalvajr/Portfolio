@@ -8,10 +8,10 @@
   grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
   gap: clamp(22px, 4vw, 44px);
   align-items: stretch;
-  border: 1px solid rgba(15, 23, 42, 0.1);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: clamp(22px, 4vw, 34px);
-  background: #ffffff;
+  background: var(--surface);
 }
 
 .project-kicker {
@@ -59,11 +59,11 @@
 }
 
 .tag-row span {
-  border: 1px solid rgba(30, 58, 138, 0.12);
+  border: 1px solid var(--chip-border);
   border-radius: 8px;
   padding: 7px 10px;
-  color: var(--navy);
-  background: var(--navy-soft);
+  color: var(--chip-text);
+  background: var(--chip-bg);
   font-weight: 700;
   font-size: 0.82rem;
 }
@@ -85,7 +85,7 @@
 
 .nutrio-visual img {
   width: 100%;
-  border: 1px solid rgba(15, 23, 42, 0.12);
+  border: 1px solid var(--border);
   border-radius: 8px;
   object-fit: cover;
   background: var(--paper);
@@ -101,9 +101,9 @@
   height: 100%;
   min-height: 430px;
   overflow: hidden;
-  border: 1px solid rgba(15, 23, 42, 0.12);
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: var(--ink);
+  background: var(--frame-bg);
 }
 
 .live-frame iframe {
@@ -123,10 +123,10 @@
 }
 
 .idea-grid article {
-  border: 1px solid rgba(15, 23, 42, 0.1);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 22px;
-  background: #ffffff;
+  background: var(--surface);
 }
 
 .idea-grid h3 {
@@ -165,4 +165,3 @@
     grid-row: auto;
   }
 }
-

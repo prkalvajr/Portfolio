@@ -2,6 +2,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: var(--bg);
 }
 
 .site-header {
@@ -13,8 +14,8 @@
   justify-content: space-between;
   gap: 24px;
   padding: 16px clamp(18px, 4vw, 56px);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-  background: rgba(250, 252, 255, 0.9);
+  border-bottom: 1px solid var(--border-soft);
+  background: var(--header-bg);
   backdrop-filter: blur(18px);
 }
 
@@ -36,6 +37,14 @@
   color: #ffffff;
   background: linear-gradient(135deg, var(--navy), var(--teal));
   font-weight: 800;
+}
+
+.nav-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .brand strong,
@@ -76,7 +85,38 @@
 .nav a:hover,
 .nav a.is-active {
   color: var(--navy);
-  background: var(--navy-soft);
+  background: var(--chip-bg);
+}
+
+.theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border-accent);
+  border-radius: 8px;
+  color: var(--button-secondary-text);
+  background: var(--button-secondary-bg);
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: var(--button-secondary-bg-hover);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--chip-bg);
+  outline-offset: 2px;
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
 }
 
 main {
@@ -89,7 +129,7 @@ main {
   justify-content: space-between;
   gap: 16px;
   padding: 24px clamp(18px, 4vw, 56px);
-  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  border-top: 1px solid var(--border-soft);
   color: var(--muted);
   font-size: 0.9rem;
 }
@@ -117,6 +157,11 @@ main {
     padding-bottom: 2px;
   }
 
+  .nav-group {
+    align-items: flex-start;
+    width: 100%;
+  }
+
   .nav a {
     white-space: normal;
   }
@@ -132,6 +177,7 @@ main {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 6px;
+    flex: 1 1 100%;
   }
 
   .nav a {
