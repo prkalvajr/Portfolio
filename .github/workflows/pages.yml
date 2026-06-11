@@ -36,6 +36,9 @@ jobs:
       - name: Add SPA fallback
         run: node scripts/create-gh-pages-404.mjs
 
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
