@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { projectIdeas, projects } from '../../data/portfolio-content';
+import { Component, computed, inject } from '@angular/core';
+import { LanguageService } from '../../language.service';
 
 @Component({
   selector: 'app-projects-page',
@@ -7,7 +7,9 @@ import { projectIdeas, projects } from '../../data/portfolio-content';
   styleUrl: './projects.page.css',
 })
 export class ProjectsPage {
-  protected readonly projects = projects;
-  protected readonly ideas = projectIdeas;
+  private readonly languageService = inject(LanguageService);
+  private readonly content = this.languageService.content;
+  protected readonly projects = computed(() => this.content().projects);
+  protected readonly ideas = computed(() => this.content().projectIdeas);
+  protected readonly copy = computed(() => this.content().copy.projectsPage);
 }
-

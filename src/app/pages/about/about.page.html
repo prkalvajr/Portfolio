@@ -1,35 +1,28 @@
 <section class="page-hero compact">
-  <p class="eyebrow">About</p>
-  <h1>Full-stack engineer with a product builder bias</h1>
-  <p>{{ profile.summary }}</p>
+  <p class="eyebrow">{{ copy().eyebrow }}</p>
+  <h1>{{ copy().title }}</h1>
+  <p>{{ profile().summary }}</p>
 </section>
 
 <section class="section about-layout">
   <article class="about-card">
-    <h2>What I am good at</h2>
-    <p>
-      I like owning the whole product slice: usable frontend, reliable backend, data model, deployment path,
-      and the small UX details that make software feel trustworthy.
-    </p>
+    <h2>{{ copy().whatImGoodAt }}</h2>
+    <p>{{ copy().body }}</p>
     <div class="strength-grid">
-      <span>Angular applications</span>
-      <span>.NET APIs</span>
-      <span>PostgreSQL data design</span>
-      <span>AI workflow integration</span>
-      <span>CI/CD and GitHub Pages</span>
-      <span>Product discovery</span>
+      @for (strength of copy().strengths; track strength) {
+        <span>{{ strength }}</span>
+      }
     </div>
   </article>
 
   <aside class="contact-card">
-    <h2>Contact</h2>
-    <p>{{ profile.availability }}</p>
+    <h2>{{ copy().contactTitle }}</h2>
+    <p>{{ profile().availability }}</p>
     <div class="contact-list">
-      <a [href]="'mailto:' + profile.email">{{ profile.email }}</a>
-      @for (link of profile.links; track link.href) {
+      <a [href]="'mailto:' + profile().email">{{ profile().email }}</a>
+      @for (link of profile().links; track link.href) {
         <a [href]="link.href" target="_blank" rel="noreferrer">{{ link.label }}</a>
       }
     </div>
   </aside>
 </section>
-

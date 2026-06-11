@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { blogPosts } from '../../data/portfolio-content';
+import { Component, computed, inject } from '@angular/core';
+import { LanguageService } from '../../language.service';
 
 @Component({
   selector: 'app-blog-page',
@@ -7,6 +7,8 @@ import { blogPosts } from '../../data/portfolio-content';
   styleUrl: './blog.page.css',
 })
 export class BlogPage {
-  protected readonly posts = blogPosts;
+  private readonly languageService = inject(LanguageService);
+  private readonly content = this.languageService.content;
+  protected readonly posts = computed(() => this.content().blogPosts);
+  protected readonly copy = computed(() => this.content().copy.blogPage);
 }
-

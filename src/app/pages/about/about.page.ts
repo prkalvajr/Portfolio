@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { profile } from '../../data/portfolio-content';
+import { Component, computed, inject } from '@angular/core';
+import { LanguageService } from '../../language.service';
 
 @Component({
   selector: 'app-about-page',
@@ -7,6 +7,8 @@ import { profile } from '../../data/portfolio-content';
   styleUrl: './about.page.css',
 })
 export class AboutPage {
-  protected readonly profile = profile;
+  private readonly languageService = inject(LanguageService);
+  private readonly content = this.languageService.content;
+  protected readonly profile = computed(() => this.content().profile);
+  protected readonly copy = computed(() => this.content().copy.aboutPage);
 }
-

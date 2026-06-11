@@ -75,6 +75,13 @@ export interface PortfolioCopy {
     about: string;
     primaryNavigationLabel: string;
   };
+  documentTitles: {
+    home: string;
+    blog: string;
+    experience: string;
+    projects: string;
+    about: string;
+  };
   common: {
     brandHomeAria: string;
     contact: string;
@@ -381,6 +388,13 @@ const englishCopy: PortfolioCopy = {
     projects: 'Projects',
     about: 'About',
     primaryNavigationLabel: 'Primary navigation',
+  },
+  documentTitles: {
+    home: 'Pedro Kalva - Portfolio',
+    blog: 'Blog - Pedro Kalva',
+    experience: 'Experience - Pedro Kalva',
+    projects: 'Projects - Pedro Kalva',
+    about: 'About - Pedro Kalva',
   },
   common: {
     brandHomeAria: 'Go to home',
@@ -692,6 +706,13 @@ const portugueseCopy: PortfolioCopy = {
     projects: 'Projetos',
     about: 'Sobre',
     primaryNavigationLabel: 'Navegação principal',
+  },
+  documentTitles: {
+    home: 'Pedro Kalva - Portfolio',
+    blog: 'Blog - Pedro Kalva',
+    experience: 'Experiência - Pedro Kalva',
+    projects: 'Projetos - Pedro Kalva',
+    about: 'Sobre - Pedro Kalva',
   },
   common: {
     brandHomeAria: 'Ir para o início',

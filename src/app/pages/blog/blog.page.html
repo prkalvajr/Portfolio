@@ -1,14 +1,11 @@
 <section class="page-hero compact">
-  <p class="eyebrow">Blog</p>
-  <h1>Technical notes, build logs, and product thinking</h1>
-  <p>
-    Static posts for now, written directly in the Angular content file so the site can stay backend-free on
-    GitHub Pages.
-  </p>
+  <p class="eyebrow">{{ copy().eyebrow }}</p>
+  <h1>{{ copy().title }}</h1>
+  <p>{{ copy().intro }}</p>
 </section>
 
 <section class="section blog-list">
-  @for (post of posts; track post.slug) {
+  @for (post of posts(); track post.slug) {
     <article class="blog-entry">
       <header>
         <div>
@@ -28,4 +25,3 @@
     </article>
   }
 </section>
-

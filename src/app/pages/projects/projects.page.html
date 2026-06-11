@@ -1,14 +1,11 @@
 <section class="page-hero compact">
-  <p class="eyebrow">Projects</p>
-  <h1>Case-study style projects with live proof where possible</h1>
-  <p>
-    The strongest portfolio projects explain the problem, the decisions, the tradeoffs, and how to inspect the
-    result. This page is structured around that evidence.
-  </p>
+  <p class="eyebrow">{{ copy().eyebrow }}</p>
+  <h1>{{ copy().title }}</h1>
+  <p>{{ copy().intro }}</p>
 </section>
 
 <section class="section project-list">
-  @for (project of projects; track project.slug) {
+  @for (project of projects(); track project.slug) {
     <article class="project-detail">
       <div class="project-content">
         <div class="project-kicker">
@@ -50,16 +47,16 @@
       <div class="project-visual">
         @if (project.slug === 'nutrio') {
           <div class="nutrio-visual">
-            <img class="logo" src="/nutrio-logo.png" alt="Nutrio logo" />
-            <img src="/nutrio-desktop.png" alt="Nutrio desktop navigation preview" />
-            <img src="/nutrio-mobile.png" alt="Nutrio mobile navigation preview" />
+            <img class="logo" src="/nutrio-logo.png" [alt]="copy().nutrioLogoAlt" />
+            <img src="/nutrio-desktop.png" [alt]="copy().nutrioDesktopAlt" />
+            <img src="/nutrio-mobile.png" [alt]="copy().nutrioMobileAlt" />
           </div>
         }
 
         @if (project.slug === 'event-sourcing') {
           <div class="live-frame">
             <iframe
-              title="Event Sourcing Bank live demo"
+              [title]="copy().eventSourcingFrameTitle"
               src="https://prkalvajr.github.io/event-sourcing/"
               loading="lazy"
               sandbox="allow-scripts allow-same-origin allow-forms"
@@ -73,12 +70,12 @@
 
 <section class="section idea-section">
   <div class="section-heading">
-    <p class="eyebrow">Next valuable builds</p>
-    <h2>Project ideas that help with freelance work and senior contracts</h2>
+    <p class="eyebrow">{{ copy().nextBuildsEyebrow }}</p>
+    <h2>{{ copy().nextBuildsTitle }}</h2>
   </div>
 
   <div class="idea-grid">
-    @for (idea of ideas; track idea.title) {
+    @for (idea of ideas(); track idea.title) {
       <article>
         <h3>{{ idea.title }}</h3>
         <p>{{ idea.why }}</p>
@@ -92,4 +89,3 @@
     }
   </div>
 </section>
-
