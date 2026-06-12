@@ -185,7 +185,10 @@ export const profile = {
     'Open to remote full-stack roles, senior .NET contracts, and product engineering work.',
   links: [
     { label: 'GitHub', href: 'https://github.com/prkalvajr' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/prkalvajr/' },
+    {
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/pedro-kalva-junior-b28498b5',
+    },
   ],
 } satisfies Profile;
 
@@ -561,7 +564,7 @@ const englishCopy: PortfolioCopy = {
     intro:
       'A resume-backed timeline of roles across Brazil and US remote teams, covering enterprise applications, scalable APIs, Angular frontends, SQL data modeling, asynchronous jobs, and observability.',
     loadMore: 'Show more experience',
-    collapse: 'Collapse timeline',
+    collapse: 'Collapse',
   },
   aboutPage: {
     eyebrow: 'About',
@@ -601,7 +604,10 @@ const portugueseProfile: Profile = {
     'Aberto a oportunidades remotas full-stack, contratos senior em .NET e projetos de engenharia de produto.',
   links: [
     { label: 'GitHub', href: 'https://github.com/prkalvajr' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/prkalvajr/' },
+    {
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/pedro-kalva-junior-b28498b5',
+    },
   ],
 };
 
