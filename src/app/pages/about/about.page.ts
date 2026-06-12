@@ -11,4 +11,5 @@ export class AboutPage {
   private readonly content = this.languageService.content;
   protected readonly profile = computed(() => this.content().profile);
   protected readonly copy = computed(() => this.content().copy.aboutPage);
+  protected readonly skillGroups = computed(() => this.content().skillGroups);
 }

@@ -10,6 +10,7 @@ export interface Profile {
   role: string;
   location: string;
   email: string;
+  phone: string;
   headline: string;
   summary: string;
   availability: string;
@@ -54,9 +55,16 @@ export interface BlogPost {
 export interface ExperienceItem {
   period: string;
   title: string;
-  context: string;
+  company: string;
+  location: string;
   summary: string;
+  stack: string[];
   highlights: string[];
+}
+
+export interface SkillGroup {
+  title: string;
+  items: string[];
 }
 
 export interface ProjectIdea {
@@ -141,6 +149,11 @@ export interface PortfolioCopy {
     whatImGoodAt: string;
     body: string;
     strengths: string[];
+    skillsTitle: string;
+    languagesTitle: string;
+    languages: string[];
+    educationTitle: string;
+    education: string;
     contactTitle: string;
   };
 }
@@ -151,32 +164,33 @@ export interface PortfolioContent {
   projects: Project[];
   blogPosts: BlogPost[];
   experienceItems: ExperienceItem[];
+  skillGroups: SkillGroup[];
   projectIdeas: ProjectIdea[];
   copy: PortfolioCopy;
 }
 
 export const profile = {
   name: 'Pedro Kalva',
-  role: 'Senior Full-Stack Developer',
-  location: 'Brazil - remote-friendly',
+  role: 'Full-Stack .NET Developer',
+  location: 'Florianópolis, Brazil',
   email: 'pedro.kalva@gmail.com',
+  phone: '+55 48 98447-4623',
   headline:
-    'I build pragmatic product systems with Angular, .NET, cloud automation, and AI-assisted workflows.',
+    'Full-stack .NET developer with 7+ years building scalable web applications, APIs, and product systems.',
   summary:
-    'Full-stack engineer focused on useful products, resilient APIs, clean frontends, and business features that survive real users. Current portfolio focus: nutrition technology, event-driven thinking, and static-first publishing that is easy to host.',
+    'Strong expertise in C#, .NET, Angular, React, and SQL databases, with hands-on work in modern architectures, clean code, performance tuning, and AI-assisted development. I have 2+ years collaborating remotely with US-based teams in agile environments.',
   availability:
-    'Open to freelance builds, senior full-stack contracts, and product engineering roles.',
+    'Open to remote full-stack roles, senior .NET contracts, and product engineering work.',
   links: [
     { label: 'GitHub', href: 'https://github.com/prkalvajr' },
-    { label: 'Email', href: 'mailto:pedro.kalva@gmail.com' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/prkalvajr/' },
   ],
 } satisfies Profile;
 
 export const metrics: Metric[] = [
-  { value: 'Angular + .NET', label: 'primary delivery stack' },
-  { value: 'AI + product', label: 'current build focus' },
-  { value: 'Static-ready', label: 'GitHub Pages friendly' },
+  { value: '7+ years', label: 'building web applications and APIs' },
+  { value: '2+ years', label: 'remote collaboration with US teams' },
+  { value: '25-30s to 1-5s', label: 'dashboard load-time improvement' },
 ];
 
 export const projects: Project[] = [
@@ -300,51 +314,141 @@ export const blogPosts: BlogPost[] = [
 
 export const experienceItems: ExperienceItem[] = [
   {
-    period: 'Now',
-    title: 'Senior full-stack product engineering',
-    context: 'Angular, .NET, APIs, data modeling, CI/CD',
+    period: 'Nov 2023 - Jan 2026',
+    title: 'Full-Stack Developer',
+    company: 'SocialLadder',
+    location: 'United States (Remote)',
     summary:
-      'Focused on building complete product slices: frontends that are pleasant to use, APIs with clear boundaries, and deployment workflows that keep projects shippable.',
+      'Built and maintained scalable full-stack web applications for a US-based team using C#, .NET, AngularJS, and modern Angular.',
+    stack: [
+      'C#',
+      '.NET',
+      'Angular',
+      'AngularJS',
+      'CQRS',
+      'Azure Service Bus',
+      'GraphQL',
+      'Datadog',
+    ],
     highlights: [
-      'Designing Angular application flows with standalone components and responsive layouts.',
-      'Building .NET service layers, EF Core models, authentication, and background jobs.',
-      'Using GitHub Actions and static hosting patterns where a backend is not required.',
+      'Re-architected the legacy sales-conversion module with CQRS and Azure Service Bus, cutting client dashboard load times from 25-30s to 1-5s.',
+      'Designed idempotent asynchronous background jobs that generate up to 100k+ marketing links per campaign action.',
+      'Added full audit history for per-client conversion configuration and used Datadog to distinguish configuration changes from defects in minutes.',
+      'Replaced an N+1 REST Shopify integration with batched GraphQL queries, reducing sync time by roughly 40-60%.',
+      'Built a cached sales leaderboard that kept user rankings responsive under high load.',
     ],
   },
   {
-    period: '2026',
-    title: 'Nutrio product build',
-    context: 'AI-assisted nutrition tracking',
+    period: 'Jun 2021 - Nov 2023',
+    title: 'Full-Stack Developer',
+    company: 'Basis Tecnologia da Informação S.A.',
+    location: 'Brazil',
     summary:
-      'Creating a voice-first nutrition app with bilingual UX, verified nutrition lookup, and AI-assisted food extraction.',
+      'Engineered enterprise APIs, backend services, relational data models, and frontend features for high-volume business workflows.',
+    stack: ['C#', '.NET Framework', 'Angular', 'JavaScript', 'SQL databases'],
     highlights: [
-      'Structured a multi-layer .NET backend with application, domain, infrastructure, and API projects.',
-      'Built Angular product surfaces for logging, progress, chat, community, billing, and profile workflows.',
-      'Planned a data pipeline that separates AI extraction from verified nutrition values.',
+      'Built .NET Framework and C# services for enterprise systems.',
+      'Modeled relational database schemas that supported high-volume workflows.',
+      'Delivered and maintained frontend features in JavaScript and Angular.',
+      'Led code reviews and debugging efforts that improved overall system stability.',
     ],
   },
   {
-    period: '2026',
-    title: 'Architecture demos and learning assets',
-    context: 'Event sourcing, testing, frontend state',
+    period: 'Aug 2020 - Jun 2021',
+    title: 'Backend Developer',
+    company: 'Seventh',
+    location: 'Brazil',
     summary:
-      'Turning architecture concepts into small, hosted applications that can be inspected, replayed, and discussed.',
+      'Developed backend services and APIs in C#, .NET Core, and PostgreSQL, applying Clean Architecture and test-driven development.',
+    stack: ['C#', '.NET Core', 'PostgreSQL', 'Clean Architecture', 'TDD'],
     highlights: [
-      'Built Event Sourcing Bank as a static demo with an append-only browser ledger.',
-      'Used reducer-based state derivation to make the pattern visible in the UI.',
-      'Kept the app deployable to GitHub Pages with no backend requirement.',
+      'Built and maintained APIs and core modules for internal and external integrations.',
+      'Drove development with TDD and reached 100% unit-test coverage.',
+      'Kept backend services reliable through clean boundaries and strong automated tests.',
     ],
   },
   {
-    period: 'Next',
-    title: 'Resume timeline import',
-    context: 'Exact companies, dates, achievements',
+    period: 'Sep 2019 - Feb 2020',
+    title: 'Full-Stack Developer',
+    company: 'Granter',
+    location: 'Brazil',
     summary:
-      'This page is ready for your updated resume. The next pass should replace this draft with concrete company history and measurable impact.',
+      'Delivered UI components and backend features across JavaScript, jQuery, C#, and SQL Server.',
+    stack: ['C#', 'SQL Server', 'JavaScript', 'jQuery', 'HTML/CSS'],
     highlights: [
-      'Add employer names, roles, and dates.',
-      'Add metrics such as latency reduced, users supported, revenue enabled, or deployment frequency improved.',
-      'Add one leadership example per senior role: mentoring, architecture decision, rescue, migration, or delivery ownership.',
+      'Built UI components with JavaScript, jQuery, HTML, and CSS.',
+      'Developed backend features in C# and SQL Server, including complex stored procedures and triggers.',
+    ],
+  },
+  {
+    period: 'Apr 2017 - Aug 2019',
+    title: 'Full-Stack Developer',
+    company: 'Paradigma Business Solutions S/A',
+    location: 'Brazil',
+    summary:
+      'Developed and maintained government enterprise applications across ASP.NET Web Forms, SQL Server, and reporting tools.',
+    stack: [
+      'C#',
+      'ASP.NET Web Forms',
+      'SQL Server',
+      'KendoUI',
+      'jQuery',
+      'Crystal Reports',
+    ],
+    highlights: [
+      'Built and maintained government enterprise applications using C#, ASP.NET Web Forms, and SQL Server.',
+      'Created frontend features with KendoUI and jQuery, and generated reports with Crystal Reports and Report Viewer.',
+    ],
+  },
+];
+
+export const skillGroups: SkillGroup[] = [
+  {
+    title: 'Backend',
+    items: [
+      'C#',
+      '.NET Core',
+      '.NET Framework',
+      '.NET 6+',
+      'ASP.NET',
+      'RESTful APIs',
+      'GraphQL',
+      'Entity Framework',
+      'Dapper',
+      'Azure Service Bus',
+      'RabbitMQ',
+    ],
+  },
+  {
+    title: 'Frontend',
+    items: [
+      'Angular',
+      'AngularJS',
+      'React',
+      'JavaScript',
+      'HTML5',
+      'CSS3',
+      'Tailwind',
+    ],
+  },
+  {
+    title: 'Databases',
+    items: ['SQL Server', 'PostgreSQL', 'Vector databases'],
+  },
+  {
+    title: 'Cloud & DevOps',
+    items: ['Azure', 'Docker', 'CI/CD', 'Git', 'GitHub', 'Datadog'],
+  },
+  {
+    title: 'Architecture & Practices',
+    items: [
+      'Clean Architecture',
+      'CQRS',
+      'SOLID principles',
+      'MVC',
+      'TDD',
+      'Agile/Scrum',
+      'AI-assisted programming',
     ],
   },
 ];
@@ -422,9 +526,9 @@ const englishCopy: PortfolioCopy = {
     selectedWorkTitle: 'Proof through shipped surfaces and inspectable demos',
     allProjects: 'All projects',
     experienceEyebrow: 'Experience',
-    experienceTitle: 'Timeline ready for resume details',
+    experienceTitle: 'Seven years across enterprise systems, product APIs, and Angular frontends',
     experienceCopy:
-      'The structure is in place now. Once you send the updated resume, the draft items can become exact roles, dates, and measurable senior-level impact.',
+      'From government enterprise platforms to US remote product work, the through-line is practical full-stack delivery: C#, .NET, Angular, SQL, async systems, and measurable performance wins.',
     openTimeline: 'Open timeline',
     writingEyebrow: 'Writing',
     writingTitle: 'Short notes that show technical judgment',
@@ -451,50 +555,56 @@ const englishCopy: PortfolioCopy = {
   },
   experiencePage: {
     eyebrow: 'Work experience',
-    title: 'A senior timeline shell, ready for your updated resume',
+    title: 'Full-stack experience with measurable backend and frontend impact',
     intro:
-      'The current entries avoid inventing company history. Send the updated resume and this becomes a precise, evidence-rich timeline with dates, companies, scope, and outcomes.',
+      'A resume-backed timeline of roles across Brazil and US remote teams, covering enterprise applications, scalable APIs, Angular frontends, SQL data modeling, asynchronous jobs, and observability.',
   },
   aboutPage: {
     eyebrow: 'About',
-    title: 'Full-stack engineer with a product builder bias',
+    title: 'Full-stack .NET developer with a product builder bias',
     whatImGoodAt: 'What I am good at',
     body:
-      'I like owning the whole product slice: usable frontend, reliable backend, data model, deployment path, and the small UX details that make software feel trustworthy.',
+      'I like owning the whole product slice: usable frontend, reliable backend, data model, deployment path, and the small engineering details that make software fast, traceable, and trustworthy.',
     strengths: [
-      'Angular applications',
-      '.NET APIs',
-      'PostgreSQL data design',
-      'AI workflow integration',
-      'CI/CD and GitHub Pages',
-      'Product discovery',
+      'Scalable .NET APIs',
+      'Angular product interfaces',
+      'SQL data modeling',
+      'Async architecture',
+      'Performance tuning',
+      'Remote agile delivery',
     ],
+    skillsTitle: 'Technical skills',
+    languagesTitle: 'Languages',
+    languages: ['Portuguese - native', 'English - full professional'],
+    educationTitle: 'Education',
+    education:
+      'SENAI/SC - Technical Course in Computing Programming (2013-2015)',
     contactTitle: 'Contact',
   },
 };
 
 const portugueseProfile: Profile = {
   name: 'Pedro Kalva',
-  role: 'Desenvolvedor Full-Stack Senior',
-  location: 'Brasil - remoto',
+  role: 'Desenvolvedor Full-Stack .NET',
+  location: 'Florianópolis, Brasil',
   email: 'pedro.kalva@gmail.com',
+  phone: '+55 48 98447-4623',
   headline:
-    'Eu construo sistemas de produto pragmáticos com Angular, .NET, automação em nuvem e fluxos assistidos por IA.',
+    'Desenvolvedor full-stack .NET com mais de 7 anos construindo aplicações web, APIs e sistemas de produto escaláveis.',
   summary:
-    'Engenheiro full-stack focado em produtos úteis, APIs resilientes, frontends limpos e funcionalidades de negócio que funcionam com usuários reais. O foco atual do portfolio: tecnologia de nutrição, pensamento orientado a eventos e publicação estática fácil de hospedar.',
+    'Sólida experiência em C#, .NET, Angular, React e bancos de dados SQL, com atuação prática em arquiteturas modernas, código limpo, performance e desenvolvimento assistido por IA. Tenho mais de 2 anos de colaboração remota com times nos Estados Unidos em ambientes ágeis.',
   availability:
-    'Aberto a projetos freelance, contratos senior full-stack e oportunidades em engenharia de produto.',
+    'Aberto a oportunidades remotas full-stack, contratos senior em .NET e projetos de engenharia de produto.',
   links: [
     { label: 'GitHub', href: 'https://github.com/prkalvajr' },
-    { label: 'Email', href: 'mailto:pedro.kalva@gmail.com' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/prkalvajr/' },
   ],
 };
 
 const portugueseMetrics: Metric[] = [
-  { value: 'Angular + .NET', label: 'stack principal de entrega' },
-  { value: 'IA + produto', label: 'foco atual de construção' },
-  { value: 'Static-ready', label: 'pronto para GitHub Pages' },
+  { value: '7+ anos', label: 'construindo aplicações web e APIs' },
+  { value: '2+ anos', label: 'colaboração remota com times dos EUA' },
+  { value: '25-30s para 1-5s', label: 'melhoria no carregamento de dashboards' },
 ];
 
 const portugueseProjects: Project[] = [
@@ -618,51 +728,141 @@ const portugueseBlogPosts: BlogPost[] = [
 
 const portugueseExperienceItems: ExperienceItem[] = [
   {
-    period: 'Agora',
-    title: 'Engenharia de produto full-stack senior',
-    context: 'Angular, .NET, APIs, modelagem de dados, CI/CD',
+    period: 'nov/2023 - jan/2026',
+    title: 'Desenvolvedor Full-Stack',
+    company: 'SocialLadder',
+    location: 'Estados Unidos (Remoto)',
     summary:
-      'Foco em construir fatias completas de produto: frontends agradáveis de usar, APIs com limites claros e fluxos de deploy que mantêm projetos entregáveis.',
+      'Desenvolvi e mantive aplicações web full-stack escaláveis para um time nos Estados Unidos usando C#, .NET, AngularJS e Angular moderno.',
+    stack: [
+      'C#',
+      '.NET',
+      'Angular',
+      'AngularJS',
+      'CQRS',
+      'Azure Service Bus',
+      'GraphQL',
+      'Datadog',
+    ],
     highlights: [
-      'Desenhando fluxos de aplicação Angular com componentes standalone e layouts responsivos.',
-      'Construindo camadas de serviço em .NET, modelos EF Core, autenticação e jobs em background.',
-      'Usando GitHub Actions e padrões de hospedagem estática quando backend não é necessário.',
+      'Reestruturei o módulo legado de conversão de vendas com CQRS e Azure Service Bus, reduzindo o carregamento dos dashboards de 25-30s para 1-5s.',
+      'Projetei jobs assíncronos idempotentes que geram até 100k+ links de marketing por ação de campanha.',
+      'Adicionei histórico completo de auditoria à configuração de conversão por cliente e usei Datadog para distinguir mudanças de configuração de defeitos em minutos.',
+      'Substituí uma integração REST com problema N+1 no Shopify por queries GraphQL em lote, reduzindo a sincronização em cerca de 40-60%.',
+      'Construí um leaderboard de vendas com cache para manter rankings responsivos sob alta carga.',
     ],
   },
   {
-    period: '2026',
-    title: 'Construção do produto Nutrio',
-    context: 'Acompanhamento nutricional assistido por IA',
+    period: 'jun/2021 - nov/2023',
+    title: 'Desenvolvedor Full-Stack',
+    company: 'Basis Tecnologia da Informação S.A.',
+    location: 'Brasil',
     summary:
-      'Criando um app de nutrição voice-first com UX bilíngue, busca nutricional verificada e extração de alimentos assistida por IA.',
+      'Desenvolvi APIs, serviços de backend, modelos relacionais e funcionalidades de frontend para fluxos corporativos de alto volume.',
+    stack: ['C#', '.NET Framework', 'Angular', 'JavaScript', 'Bancos SQL'],
     highlights: [
-      'Estruturei um backend .NET em múltiplas camadas com projetos de application, domain, infrastructure e API.',
-      'Construí superfícies de produto em Angular para registro, progresso, chat, comunidade, billing e perfil.',
-      'Planejei um pipeline de dados que separa extração por IA de valores nutricionais verificados.',
+      'Desenvolvi serviços com .NET Framework e C# para sistemas corporativos.',
+      'Modelei esquemas de banco de dados relacionais para fluxos de negócio de alto volume.',
+      'Entreguei e mantive funcionalidades de frontend com JavaScript e Angular.',
+      'Conduzi code reviews e depuração que melhoraram a estabilidade geral dos sistemas.',
     ],
   },
   {
-    period: '2026',
-    title: 'Demos de arquitetura e materiais de aprendizado',
-    context: 'Event sourcing, testes, estado no frontend',
+    period: 'ago/2020 - jun/2021',
+    title: 'Desenvolvedor Backend',
+    company: 'Seventh',
+    location: 'Brasil',
     summary:
-      'Transformando conceitos de arquitetura em pequenas aplicações hospedadas que podem ser inspecionadas, reproduzidas e discutidas.',
+      'Desenvolvi serviços de backend e APIs com C#, .NET Core e PostgreSQL, aplicando Clean Architecture e TDD.',
+    stack: ['C#', '.NET Core', 'PostgreSQL', 'Clean Architecture', 'TDD'],
     highlights: [
-      'Construí Event Sourcing Bank como demo estática com um ledger append-only no navegador.',
-      'Usei derivação de estado baseada em reducer para tornar o padrão visível na UI.',
-      'Mantive o app publicável no GitHub Pages sem necessidade de backend.',
+      'Construí e mantive APIs e módulos centrais para integrações internas e externas.',
+      'Conduzi o desenvolvimento com TDD e atingi 100% de cobertura de testes unitários.',
+      'Mantive serviços de backend confiáveis com limites claros e testes automatizados fortes.',
     ],
   },
   {
-    period: 'Próximo',
-    title: 'Importação da timeline do currículo',
-    context: 'Empresas, datas e conquistas exatas',
+    period: 'set/2019 - fev/2020',
+    title: 'Desenvolvedor Full-Stack',
+    company: 'Granter',
+    location: 'Brasil',
     summary:
-      'Esta página está pronta para seu currículo atualizado. O próximo passo deve substituir este rascunho por histórico real de empresas e impacto mensurável.',
+      'Entreguei componentes de interface e funcionalidades de backend com JavaScript, jQuery, C# e SQL Server.',
+    stack: ['C#', 'SQL Server', 'JavaScript', 'jQuery', 'HTML/CSS'],
     highlights: [
-      'Adicionar nomes de empresas, cargos e datas.',
-      'Adicionar métricas como latência reduzida, usuários atendidos, receita habilitada ou frequência de deploy melhorada.',
-      'Adicionar um exemplo de liderança por cargo senior: mentoria, decisão de arquitetura, resgate, migração ou ownership de entrega.',
+      'Construí componentes de interface com JavaScript, jQuery, HTML e CSS.',
+      'Desenvolvi funcionalidades de backend com C# e SQL Server, incluindo stored procedures e triggers complexas.',
+    ],
+  },
+  {
+    period: 'abr/2017 - ago/2019',
+    title: 'Desenvolvedor Full-Stack',
+    company: 'Paradigma Business Solutions S/A',
+    location: 'Brasil',
+    summary:
+      'Desenvolvi e mantive aplicações corporativas governamentais com ASP.NET Web Forms, SQL Server e ferramentas de relatórios.',
+    stack: [
+      'C#',
+      'ASP.NET Web Forms',
+      'SQL Server',
+      'KendoUI',
+      'jQuery',
+      'Crystal Reports',
+    ],
+    highlights: [
+      'Desenvolvi e mantive aplicações corporativas governamentais com C#, ASP.NET Web Forms e SQL Server.',
+      'Construí funcionalidades de frontend com KendoUI e jQuery, e gerei relatórios com Crystal Reports e Report Viewer.',
+    ],
+  },
+];
+
+const portugueseSkillGroups: SkillGroup[] = [
+  {
+    title: 'Backend',
+    items: [
+      'C#',
+      '.NET Core',
+      '.NET Framework',
+      '.NET 6+',
+      'ASP.NET',
+      'RESTful APIs',
+      'GraphQL',
+      'Entity Framework',
+      'Dapper',
+      'Azure Service Bus',
+      'RabbitMQ',
+    ],
+  },
+  {
+    title: 'Frontend',
+    items: [
+      'Angular',
+      'AngularJS',
+      'React',
+      'JavaScript',
+      'HTML5',
+      'CSS3',
+      'Tailwind',
+    ],
+  },
+  {
+    title: 'Bancos de dados',
+    items: ['SQL Server', 'PostgreSQL', 'Bancos vetoriais'],
+  },
+  {
+    title: 'Cloud & DevOps',
+    items: ['Azure', 'Docker', 'CI/CD', 'Git', 'GitHub', 'Datadog'],
+  },
+  {
+    title: 'Arquitetura & Práticas',
+    items: [
+      'Clean Architecture',
+      'CQRS',
+      'Princípios SOLID',
+      'MVC',
+      'TDD',
+      'Agile/Scrum',
+      'Programação assistida por IA',
     ],
   },
 ];
@@ -740,9 +940,9 @@ const portugueseCopy: PortfolioCopy = {
     selectedWorkTitle: 'Prova por produtos entregues e demos inspecionáveis',
     allProjects: 'Todos os projetos',
     experienceEyebrow: 'Experiência',
-    experienceTitle: 'Timeline pronta para detalhes do currículo',
+    experienceTitle: 'Sete anos entre sistemas corporativos, APIs de produto e frontends Angular',
     experienceCopy:
-      'A estrutura já está pronta. Quando você enviar o currículo atualizado, os itens em rascunho podem virar cargos, datas e impactos senior mensuráveis.',
+      'De plataformas governamentais a trabalho remoto com produto nos Estados Unidos, a linha central é entrega full-stack prática: C#, .NET, Angular, SQL, sistemas assíncronos e ganhos mensuráveis de performance.',
     openTimeline: 'Abrir timeline',
     writingEyebrow: 'Escrita',
     writingTitle: 'Notas curtas que mostram julgamento técnico',
@@ -769,24 +969,30 @@ const portugueseCopy: PortfolioCopy = {
   },
   experiencePage: {
     eyebrow: 'Experiência profissional',
-    title: 'Uma timeline senior pronta para seu currículo atualizado',
+    title: 'Experiência full-stack com impacto mensurável em backend e frontend',
     intro:
-      'As entradas atuais evitam inventar histórico de empresas. Envie o currículo atualizado e isto vira uma timeline precisa, rica em evidências, com datas, empresas, escopo e resultados.',
+      'Uma timeline baseada no currículo, com funções no Brasil e em times remotos dos Estados Unidos, cobrindo aplicações corporativas, APIs escaláveis, frontends Angular, modelagem SQL, jobs assíncronos e observabilidade.',
   },
   aboutPage: {
     eyebrow: 'Sobre',
-    title: 'Engenheiro full-stack com viés de construtor de produto',
+    title: 'Desenvolvedor full-stack .NET com viés de construtor de produto',
     whatImGoodAt: 'No que eu sou bom',
     body:
-      'Eu gosto de assumir a fatia inteira do produto: frontend usável, backend confiável, modelo de dados, caminho de deploy e os pequenos detalhes de UX que fazem software parecer confiável.',
+      'Eu gosto de assumir a fatia inteira do produto: frontend usável, backend confiável, modelo de dados, caminho de deploy e os detalhes de engenharia que fazem software ser rápido, rastreável e confiável.',
     strengths: [
-      'Aplicações Angular',
-      'APIs .NET',
-      'Modelagem de dados PostgreSQL',
-      'Integração de fluxos com IA',
-      'CI/CD e GitHub Pages',
-      'Descoberta de produto',
+      'APIs .NET escaláveis',
+      'Interfaces de produto em Angular',
+      'Modelagem de dados SQL',
+      'Arquitetura assíncrona',
+      'Otimização de performance',
+      'Entrega remota em times ágeis',
     ],
+    skillsTitle: 'Competências técnicas',
+    languagesTitle: 'Idiomas',
+    languages: ['Português - nativo', 'Inglês - profissional completo'],
+    educationTitle: 'Formação',
+    education:
+      'SENAI/SC - Curso Técnico em Informática / Programação (2013-2015)',
     contactTitle: 'Contato',
   },
 };
@@ -798,6 +1004,7 @@ export const portfolioContent = {
     projects,
     blogPosts,
     experienceItems,
+    skillGroups,
     projectIdeas,
     copy: englishCopy,
   },
@@ -807,6 +1014,7 @@ export const portfolioContent = {
     projects: portugueseProjects,
     blogPosts: portugueseBlogPosts,
     experienceItems: portugueseExperienceItems,
+    skillGroups: portugueseSkillGroups,
     projectIdeas: portugueseProjectIdeas,
     copy: portugueseCopy,
   },

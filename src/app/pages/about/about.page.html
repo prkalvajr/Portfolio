@@ -15,14 +15,44 @@
     </div>
   </article>
 
+  <article class="skills-card">
+    <h2>{{ copy().skillsTitle }}</h2>
+    <div class="skill-groups">
+      @for (group of skillGroups(); track group.title) {
+        <section class="skill-group">
+          <h3>{{ group.title }}</h3>
+          <div>
+            @for (skill of group.items; track skill) {
+              <span>{{ skill }}</span>
+            }
+          </div>
+        </section>
+      }
+    </div>
+  </article>
+
   <aside class="contact-card">
     <h2>{{ copy().contactTitle }}</h2>
     <p>{{ profile().availability }}</p>
     <div class="contact-list">
       <a [href]="'mailto:' + profile().email">{{ profile().email }}</a>
+      <a [href]="'tel:' + profile().phone.replaceAll(' ', '')">{{ profile().phone }}</a>
+      <span>{{ profile().location }}</span>
       @for (link of profile().links; track link.href) {
         <a [href]="link.href" target="_blank" rel="noreferrer">{{ link.label }}</a>
       }
+    </div>
+    <div class="profile-facts">
+      <section>
+        <h3>{{ copy().languagesTitle }}</h3>
+        @for (language of copy().languages; track language) {
+          <span>{{ language }}</span>
+        }
+      </section>
+      <section>
+        <h3>{{ copy().educationTitle }}</h3>
+        <span>{{ copy().education }}</span>
+      </section>
     </div>
   </aside>
 </section>

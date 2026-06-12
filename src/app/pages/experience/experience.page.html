@@ -5,13 +5,26 @@
 </section>
 
 <section class="section timeline">
-  @for (item of items(); track item.title) {
+  @for (item of items(); track item.company) {
     <article class="timeline-item">
-      <div class="timeline-period">{{ item.period }}</div>
+      <div class="timeline-period">
+        <time>{{ item.period }}</time>
+      </div>
+      <div class="timeline-rail" aria-hidden="true"></div>
       <div class="timeline-body">
-        <p class="eyebrow">{{ item.context }}</p>
-        <h2>{{ item.title }}</h2>
-        <p>{{ item.summary }}</p>
+        <div class="timeline-head">
+          <div>
+            <p class="eyebrow">{{ item.company }}</p>
+            <h2>{{ item.title }}</h2>
+          </div>
+          <span>{{ item.location }}</span>
+        </div>
+        <p class="timeline-summary">{{ item.summary }}</p>
+        <div class="stack-row">
+          @for (tech of item.stack; track tech) {
+            <span>{{ tech }}</span>
+          }
+        </div>
         <ul>
           @for (highlight of item.highlights; track highlight) {
             <li>{{ highlight }}</li>
