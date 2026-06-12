@@ -11,6 +11,7 @@ export interface Profile {
   location: string;
   email: string;
   phone: string;
+  photoUrl?: string;
   headline: string;
   summary: string;
   availability: string;
@@ -177,6 +178,7 @@ export const profile = {
   location: 'Florianópolis, Brazil',
   email: 'pedro.kalva@gmail.com',
   phone: '+55 48 98447-4623',
+  photoUrl: '',
   headline:
     'Full-stack .NET developer with 7+ years building scalable web applications, APIs, and product systems.',
   summary:
@@ -541,7 +543,7 @@ const englishCopy: PortfolioCopy = {
   },
   projectsPage: {
     eyebrow: 'Projects',
-    title: 'Case-study style projects with live proof where possible',
+    title: 'Projects',
     intro:
       'The strongest portfolio projects explain the problem, the decisions, the tradeoffs, and how to inspect the result. This page is structured around that evidence.',
     nextBuildsEyebrow: 'Next valuable builds',
@@ -554,13 +556,13 @@ const englishCopy: PortfolioCopy = {
   },
   blogPage: {
     eyebrow: 'Blog',
-    title: 'Technical notes, build logs, and product thinking',
+    title: 'Writing',
     intro:
       'Static posts for now, written directly in the Angular content file so the site can stay backend-free on GitHub Pages.',
   },
   experiencePage: {
     eyebrow: 'Work experience',
-    title: 'Full-stack experience with measurable backend and frontend impact',
+    title: 'Experience timeline',
     intro:
       'A resume-backed timeline of roles across Brazil and US remote teams, covering enterprise applications, scalable APIs, Angular frontends, SQL data modeling, asynchronous jobs, and observability.',
     loadMore: 'Show more experience',
@@ -568,7 +570,7 @@ const englishCopy: PortfolioCopy = {
   },
   aboutPage: {
     eyebrow: 'About',
-    title: 'Full-stack .NET developer with a product builder bias',
+    title: 'About Pedro',
     whatImGoodAt: 'What I am good at',
     body:
       'I like owning the whole product slice: usable frontend, reliable backend, data model, deployment path, and the small engineering details that make software fast, traceable, and trustworthy.',
@@ -596,6 +598,7 @@ const portugueseProfile: Profile = {
   location: 'Florianópolis, Brasil',
   email: 'pedro.kalva@gmail.com',
   phone: '+55 48 98447-4623',
+  photoUrl: '',
   headline:
     'Desenvolvedor full-stack .NET com mais de 7 anos construindo aplicações web, APIs e sistemas de produto escaláveis.',
   summary:
@@ -960,7 +963,7 @@ const portugueseCopy: PortfolioCopy = {
   },
   projectsPage: {
     eyebrow: 'Projetos',
-    title: 'Projetos em formato de estudo de caso com prova ao vivo quando possível',
+    title: 'Projetos',
     intro:
       'Os projetos mais fortes de portfolio explicam o problema, as decisões, os tradeoffs e como inspecionar o resultado. Esta página é estruturada em torno dessas evidências.',
     nextBuildsEyebrow: 'Próximas construções valiosas',
@@ -973,13 +976,13 @@ const portugueseCopy: PortfolioCopy = {
   },
   blogPage: {
     eyebrow: 'Blog',
-    title: 'Notas técnicas, logs de construção e pensamento de produto',
+    title: 'Escrita',
     intro:
       'Posts estáticos por enquanto, escritos diretamente no arquivo de conteúdo Angular para manter o site sem backend no GitHub Pages.',
   },
   experiencePage: {
     eyebrow: 'Experiência profissional',
-    title: 'Experiência full-stack com impacto mensurável em backend e frontend',
+    title: 'Linha do tempo profissional',
     intro:
       'Uma timeline baseada no currículo, com funções no Brasil e em times remotos dos Estados Unidos, cobrindo aplicações corporativas, APIs escaláveis, frontends Angular, modelagem SQL, jobs assíncronos e observabilidade.',
     loadMore: 'Mostrar mais experiências',
@@ -987,7 +990,7 @@ const portugueseCopy: PortfolioCopy = {
   },
   aboutPage: {
     eyebrow: 'Sobre',
-    title: 'Desenvolvedor full-stack .NET com viés de construtor de produto',
+    title: 'Sobre Pedro',
     whatImGoodAt: 'No que eu sou bom',
     body:
       'Eu gosto de assumir a fatia inteira do produto: frontend usável, backend confiável, modelo de dados, caminho de deploy e os detalhes de engenharia que fazem software ser rápido, rastreável e confiável.',

@@ -53,9 +53,9 @@ export class App {
 
     return [
       { label: navigation.home, path: '/' },
-      { label: navigation.blog, path: '/blog' },
       { label: navigation.experience, path: '/experience' },
       { label: navigation.projects, path: '/projects' },
+      { label: navigation.blog, path: '/blog' },
       { label: navigation.about, path: '/about' },
     ];
   });
