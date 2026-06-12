@@ -142,6 +142,8 @@ export interface PortfolioCopy {
     eyebrow: string;
     title: string;
     intro: string;
+    loadMore: string;
+    collapse: string;
   };
   aboutPage: {
     eyebrow: string;
@@ -190,7 +192,7 @@ export const profile = {
 export const metrics: Metric[] = [
   { value: '7+ years', label: 'building web applications and APIs' },
   { value: '2+ years', label: 'remote collaboration with US teams' },
-  { value: '25-30s to 1-5s', label: 'dashboard load-time improvement' },
+  { value: '25-30s to a second', label: 'dashboard load-time improvement' },
 ];
 
 export const projects: Project[] = [
@@ -331,7 +333,7 @@ export const experienceItems: ExperienceItem[] = [
       'Datadog',
     ],
     highlights: [
-      'Re-architected the legacy sales-conversion module with CQRS and Azure Service Bus, cutting client dashboard load times from 25-30s to 1-5s.',
+      'Re-architected the legacy sales-conversion module with CQRS and Azure Service Bus, cutting client dashboard load times from 25-30s to a second.',
       'Designed idempotent asynchronous background jobs that generate up to 100k+ marketing links per campaign action.',
       'Added full audit history for per-client conversion configuration and used Datadog to distinguish configuration changes from defects in minutes.',
       'Replaced an N+1 REST Shopify integration with batched GraphQL queries, reducing sync time by roughly 40-60%.',
@@ -558,6 +560,8 @@ const englishCopy: PortfolioCopy = {
     title: 'Full-stack experience with measurable backend and frontend impact',
     intro:
       'A resume-backed timeline of roles across Brazil and US remote teams, covering enterprise applications, scalable APIs, Angular frontends, SQL data modeling, asynchronous jobs, and observability.',
+    loadMore: 'Show more experience',
+    collapse: 'Collapse timeline',
   },
   aboutPage: {
     eyebrow: 'About',
@@ -604,7 +608,7 @@ const portugueseProfile: Profile = {
 const portugueseMetrics: Metric[] = [
   { value: '7+ anos', label: 'construindo aplicações web e APIs' },
   { value: '2+ anos', label: 'colaboração remota com times dos EUA' },
-  { value: '25-30s para 1-5s', label: 'melhoria no carregamento de dashboards' },
+  { value: '25-30s para 1 segundo', label: 'melhoria no carregamento de dashboards' },
 ];
 
 const portugueseProjects: Project[] = [
@@ -745,7 +749,7 @@ const portugueseExperienceItems: ExperienceItem[] = [
       'Datadog',
     ],
     highlights: [
-      'Reestruturei o módulo legado de conversão de vendas com CQRS e Azure Service Bus, reduzindo o carregamento dos dashboards de 25-30s para 1-5s.',
+      'Reestruturei o módulo legado de conversão de vendas com CQRS e Azure Service Bus, reduzindo o carregamento dos dashboards de 25-30s para 1 segundo.',
       'Projetei jobs assíncronos idempotentes que geram até 100k+ links de marketing por ação de campanha.',
       'Adicionei histórico completo de auditoria à configuração de conversão por cliente e usei Datadog para distinguir mudanças de configuração de defeitos em minutos.',
       'Substituí uma integração REST com problema N+1 no Shopify por queries GraphQL em lote, reduzindo a sincronização em cerca de 40-60%.',
@@ -972,6 +976,8 @@ const portugueseCopy: PortfolioCopy = {
     title: 'Experiência full-stack com impacto mensurável em backend e frontend',
     intro:
       'Uma timeline baseada no currículo, com funções no Brasil e em times remotos dos Estados Unidos, cobrindo aplicações corporativas, APIs escaláveis, frontends Angular, modelagem SQL, jobs assíncronos e observabilidade.',
+    loadMore: 'Mostrar mais experiências',
+    collapse: 'Recolher timeline',
   },
   aboutPage: {
     eyebrow: 'Sobre',

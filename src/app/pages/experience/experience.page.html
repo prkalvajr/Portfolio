@@ -5,7 +5,7 @@
 </section>
 
 <section class="section timeline">
-  @for (item of items(); track item.company) {
+  @for (item of visibleItems(); track item.company) {
     <article class="timeline-item">
       <div class="timeline-period">
         <time>{{ item.period }}</time>
@@ -32,5 +32,13 @@
         </ul>
       </div>
     </article>
+  }
+
+  @if (showTimelineAction()) {
+    <div class="timeline-actions">
+      <button class="button button-secondary" type="button" (click)="toggleTimelineItems()">
+        {{ timelineActionLabel() }}
+      </button>
+    </div>
   }
 </section>
